@@ -103,7 +103,7 @@ class BukuController extends Controller
         'diskon' => 'required',
 
     ]);
-        $buku = new Buku;
+        $buku = Buku::find($id);
         $buku->judul = $request->judul;
         $buku->noisbn = $request->noisbn;
         $buku->penulis = $request->penulis;
@@ -115,7 +115,7 @@ class BukuController extends Controller
         $buku->ppn = $request->ppn;
         $buku->diskon = $request->diskon;
         
-        $anggota->save();
+        $buku->save();
         return redirect('/buku');
     }
 
