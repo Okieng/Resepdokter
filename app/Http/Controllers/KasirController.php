@@ -59,16 +59,14 @@ class KasirController extends Controller
         return redirect('/kasir');
     }
 
-
-    
-
-        /**
-     * Show the form for editing the specified resource.
+       /**
+     * Update the specified resource in storage.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+  public function edit($id)
     {
         $kasir = Kasir::find($id);
 
@@ -87,31 +85,23 @@ class KasirController extends Controller
     {
         
         $this->validate($request, [
-        'judul' => 'required',
-        'noisbn' => 'required',
-        'penulis' => 'required',
-        'penerbit' => 'required',
-        'tahun' => 'required',
-        'stok' => 'required',
-        'harga_pokok' => 'required',
-        'harga_jual' => 'required',
-        'ppn' => 'required',
-        'diskon' => 'required',
+        'nama' => 'required',
+        'alamat' => 'required',
+        'telepon' => 'required',
+        'status' => 'required',
+        'username' => 'required',
+        'akses' => 'required',
 
     ]);
-        $kasir = new Kasir;
-        $kasir->judul = $request->judul;
-        $kasir->noisbn = $request->noisbn;
-        $kasir->penulis = $request->penulis;
-        $kasir->penerbit = $request->penerbit;
-        $kasir->tahun = $request->tahun;
-        $kasir->stok = $request->stok;
-        $kasir->harga_pokok = $request->harga_pokok;
-        $kasir->harga_jual = $request->harga_jual;
-        $kasir->ppn = $request->ppn;
-        $kasir->diskon = $request->diskon;
-        
-        $anggota->save();
+        $kasir = Kasir::find($id);
+        $kasir->nama = $request->nama;
+        $kasir->alamat = $request->alamat;
+        $kasir->telepon = $request->telepon;
+        $kasir->status = $request->status;
+        $kasir->username = $request->username;
+        $kasir->password = $request->password;
+        $kasir->akses = $request->akses;
+        $kasir->save();
         return redirect('/kasir');
     }
 

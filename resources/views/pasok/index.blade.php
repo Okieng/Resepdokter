@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href=" /img/favicon.ico">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href=" /img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <title>Aplikasi Toko Buku</title>
+	<title>Aplikasi Toko Buku</title>
 
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
 
 
@@ -43,7 +43,7 @@
 
     -->
 
-      <div class="sidebar-wrapper">
+    	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
                     Creative Tim
@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="/distributor">
+                    <a href="/pasok">
                         <i class="pe-7s-user"></i>
                         <p>Distributor</p>
                     </a>
@@ -93,14 +93,14 @@
                         <p>Notifications</p>
                     </a>
                 </li>
-        <li class="active-pro">
+				<li class="active-pro">
                     <a href="upgrade.html">
                         <i class="pe-7s-rocket"></i>
                         <p>Upgrade to PRO</p>
                     </a>
                 </li>
             </ul>
-      </div>
+    	</div>
     </div>
 
     <div class="main-panel">
@@ -120,7 +120,7 @@
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-dashboard"></i>
-                <p class="hidden-lg hidden-md">Dashboard</p>
+								<p class="hidden-lg hidden-md">Dashboard</p>
                             </a>
                         </li>
                         <li class="dropdown">
@@ -128,10 +128,10 @@
                                     <i class="fa fa-globe"></i>
                                     <b class="caret hidden-sm hidden-xs"></b>
                                     <span class="notification hidden-sm hidden-xs">5</span>
-                  <p class="hidden-lg hidden-md">
-                    5 Notifications
-                    <b class="caret"></b>
-                  </p>
+									<p class="hidden-lg hidden-md">
+										5 Notifications
+										<b class="caret"></b>
+									</p>
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a href="#">Notification 1</a></li>
@@ -144,7 +144,7 @@
                         <li>
                            <a href="">
                                 <i class="fa fa-search"></i>
-                <p class="hidden-lg hidden-md">Search</p>
+								<p class="hidden-lg hidden-md">Search</p>
                             </a>
                         </li>
                     </ul>
@@ -158,9 +158,9 @@
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <p>
-                    Dropdown
-                    <b class="caret"></b>
-                  </p>
+										Dropdown
+										<b class="caret"></b>
+									</p>
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
@@ -177,7 +177,7 @@
                                 <p>Log out</p>
                             </a>
                         </li>
-            <li class="separator hidden-lg hidden-md"></li>
+						<li class="separator hidden-lg hidden-md"></li>
                     </ul>
                 </div>
             </div>
@@ -187,66 +187,56 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-      
+			<div class="table-responsive">
+                      <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                          <tr class="headings">
+                            <th class="column-title">id pasok</th>
+                            <th class="column-title">ID Distributor</th>
+                            <th class="column-title">ID Buku</th>
+                            <th class="column-title">Jumlah</th>
+                            <th class="column-title">Tanggal</th>
+                            <th class="column-title no-link last" colspan="2"><span class="nobr">Action</span>
+                            </th>
+                          </tr>
+                        </thead>
 
-<div class="container">
+                        <tbody>
+                        	@foreach ($pasok as $data)
+                          <tr class="even pointer">
 
-@if (count($errors) > 0)
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif  
+                            <td><a href="/pasok/{{$data -> id_pasok}}">{{$data -> id_pasok}}</td>
+                            <td>{{$data -> id_distributor}}</a></td>
+                            <td>{{$data -> id_buku}}</td>
+                            <td>{{$data -> jumlah}}</td>
+                            <td>{{$data -> tanggal}}</td>
+                            <td>
+                 <button type="submit" class="btn btn-default btn-xs btn-danger" value="edit"><i class="fa fa-times"></i><a href="/pasok/{{$data->id_pasok}}/edit">Edit</a></button>
+                       
+                            </td>
 
-<form action="/distributor/{{$distributor->id_distributor}}" method="POST">
-              <div class="form-group">
-                  <label>Nama Distributor</label>
-                  <input type="text" class="form-control" name="nama_distributor" placeholder="nama_distributor" value="{{$distributor -> nama_distributor}}">
-              </div>
-              <div class="form-group">
-                  <label>Alamat</label>
-                  <input type="text" class="form-control" name="alamat" placeholder="alamat" value="{{$distributor -> alamat}}">
-              </div>
-              <div class="form-group">
-                  <label>No Hp</label>
-                  <input type="text" class="form-control" name="telepon" placeholder="telepon" value="{{$distributor -> telepon}}">
-              </div>
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <input type="hidden" name="_method" value="put">
-              <input class="btn btn-success" type="submit" value="Submit">
+                            <td>
+                              <form action="/pasok/{{$data->id_pasok}}" method="post">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        
+                        <button type="submit" class="btn btn-default btn-xs btn-danger" value="Delete"><i class="fa fa-times"></i>Delete</button>
+                       </form>
+                    </td>   
 
-</form>
-</div>
+                          </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                      <center>{!! $pasok->links() !!}</center>
+                    </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
                 </nav>
                 <p class="copyright pull-right">
                     &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
@@ -262,13 +252,13 @@
 
     <!--   Core JS Files   -->
     <script src=" /js/jquery-1.10.2.js" type="text/javascript"></script>
-  <script src=" /js/bootstrap.min.js" type="text/javascript"></script>
+	<script src=" /js/bootstrap.min.js" type="text/javascript"></script>
 
-  <!--  Checkbox, Radio & Switch Plugins -->
-  <script src=" /js/bootstrap-checkbox-radio-switch.js"></script>
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src=" /js/bootstrap-checkbox-radio-switch.js"></script>
 
-  <!--  Charts Plugin -->
-  <script src=" /js/chartist.min.js"></script>
+	<!--  Charts Plugin -->
+	<script src=" /js/chartist.min.js"></script>
 
     <!--  Notifications Plugin    -->
     <script src=" /js/bootstrap-notify.js"></script>
@@ -277,26 +267,26 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-  <script src=" /js/light-bootstrap-dashboard.js"></script>
+	<script src=" /js/light-bootstrap-dashboard.js"></script>
 
-  <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-  <script src=" /js/demo.js"></script>
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src=" /js/demo.js"></script>
 
-  <script type="text/javascript">
-      $(document).ready(function(){
+	<script type="text/javascript">
+    	$(document).ready(function(){
 
-          demo.initChartist();
+        	demo.initChartist();
 
-          $.notify({
-              icon: 'pe-7s-gift',
-              message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+        	$.notify({
+            	icon: 'pe-7s-gift',
+            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
 
             },{
                 type: 'info',
                 timer: 4000
             });
 
-      });
-  </script>
+    	});
+	</script>
 
 </html>

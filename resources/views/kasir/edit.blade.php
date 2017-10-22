@@ -1,5 +1,5 @@
 <div class="container">
-<form action="/buku" method="POST">
+<form action="/kasir/{{$kasir->id_kasir}}" method="POST">
 @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -11,46 +11,34 @@
 @endif
             
               <div class="form-group">
-                  <label>judul</label>
-                  <input type="text" class="form-control" name="judul" placeholder="judul" value="{{$buku -> judul}}">
+                  <label>nama</label>
+                  <input type="text" class="form-control" name="nama" placeholder="nama" value="{{$kasir -> nama}}">
               </div>
               <div class="form-group">
-                  <label>noisbn</label>
-                  <input type="text" class="form-control" name="noisbn" placeholder="noisbn" value="{{$buku -> noisbn}}">
+                  <label>alamat</label>
+                  <input type="text" class="form-control" name="alamat" placeholder="alamat" value="{{$kasir -> alamat}}">
               </div>
               <div class="form-group">
-                  <label>penulis</label>
-                  <input type="text" class="form-control" name="penulis" placeholder="penulis" value="{{$buku -> penulis}}">
+                  <label>telepon</label>
+                  <input type="text" class="form-control" name="telepon" placeholder="telepon" value="{{$kasir -> telepon}}">
               </div>
               <div class="form-group">
-                  <label>penerbit</label>
-                  <input type="text" class="form-control" name="penerbit" placeholder="penerbit" value="{{$buku -> penerbit}}">
+                  <label>status</label>
+                  <input type="text" class="form-control" name="status" placeholder="status" value="{{$kasir -> status}}">
               </div>
               <div class="form-group">
-                  <label>tahun</label>
-                  <input type="text" class="form-control" name="tahun" placeholder="tahun" value="{{$buku -> tahun}}">
+                  <label>username</label>
+                  <input type="text" class="form-control" name="username" placeholder="username" value="{{$kasir -> username}}">
               </div>
               <div class="form-group">
-                  <label>stok</label>
-                  <input type="text" class="form-control" name="stok" placeholder="stok" value="{{$buku -> stok}}">
+                  <input type="hidden" class="form-control" name="password" placeholder="password" value="{{$kasir -> password}}">
               </div>
               <div class="form-group">
-                  <label>harga_pokok</label>
-                  <input type="text" class="form-control" name="harga_pokok" placeholder="harga_pokok" value="{{$buku -> harga_pokok}}">
+                  <label>akses</label>
+                  <input type="text" class="form-control" name="akses" placeholder="akses" value="{{$kasir -> akses}}">
               </div>
-              <div class="form-group">
-                  <label>harga_jual</label>
-                  <input type="text" class="form-control" name="harga_jual" placeholder="harga_jual" value="{{$buku -> harga_jual}}">
-              </div>
-              <div class="form-group">
-                  <label>ppn</label>
-                  <input type="text" class="form-control" name="ppn" placeholder="ppn" value="{{$buku -> ppn}}">
-              </div>
-              <div class="form-group">
-                  <label>diskon</label>
-                  <input type="text" class="form-control" name="diskon" placeholder="diskon" value="{{$buku -> diskon}}">
-              </div>
-        <input type="hidden" name="_token" value="{{csrf_token()}}">
+             <input type="hidden" name="_token" value="{{csrf_token()}}">
+             <input type="hidden" name="_method" value="put">
               <input class="btn btn-success" type="submit" value="Submit">
 
 </form>

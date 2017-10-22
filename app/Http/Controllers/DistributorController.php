@@ -50,7 +50,7 @@ class DistributorController extends Controller
 
     
 
-        /**
+       /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -75,31 +75,16 @@ class DistributorController extends Controller
     {
         
         $this->validate($request, [
-        'judul' => 'required',
-        'noisbn' => 'required',
-        'penulis' => 'required',
-        'penerbit' => 'required',
-        'tahun' => 'required',
-        'stok' => 'required',
-        'harga_pokok' => 'required',
-        'harga_jual' => 'required',
-        'ppn' => 'required',
-        'diskon' => 'required',
+        'nama_distributor' => 'required',
+        'alamat' => 'required',
+        'telepon' => 'required',
 
     ]);
-        $distributor = new Distributor;
-        $distributor->judul = $request->judul;
-        $distributor->noisbn = $request->noisbn;
-        $distributor->penulis = $request->penulis;
-        $distributor->penerbit = $request->penerbit;
-        $distributor->tahun = $request->tahun;
-        $distributor->stok = $request->stok;
-        $distributor->harga_pokok = $request->harga_pokok;
-        $distributor->harga_jual = $request->harga_jual;
-        $distributor->ppn = $request->ppn;
-        $distributor->diskon = $request->diskon;
-        
-        $anggota->save();
+        $distributor = Distributor::find($id);
+        $distributor->nama_distributor = $request->nama_distributor;
+        $distributor->alamat = $request->alamat;
+        $distributor->telepon = $request->telepon;
+        $distributor->save();
         return redirect('/distributor');
     }
 

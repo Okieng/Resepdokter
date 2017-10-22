@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="/distributor">
+                    <a href="/pasok">
                         <i class="pe-7s-user"></i>
                         <p>Distributor</p>
                     </a>
@@ -201,21 +201,36 @@
     </div>
 @endif  
 
-<form action="/distributor/{{$distributor->id_distributor}}" method="POST">
+<form action="/pasok" method="POST">
               <div class="form-group">
                   <label>Nama Distributor</label>
-                  <input type="text" class="form-control" name="nama_distributor" placeholder="nama_distributor" value="{{$distributor -> nama_distributor}}">
+                  <select name="id_distributor">
+                  @foreach ($distributor as $data1)
+                    <option value="{{$data1 ->id_distributor}}">{{$data1 ->nama_distributor}}</option>
+                  @endforeach 
+                  </select>
               </div>
+
               <div class="form-group">
-                  <label>Alamat</label>
-                  <input type="text" class="form-control" name="alamat" placeholder="alamat" value="{{$distributor -> alamat}}">
+                  <label>Judul Buku</label>
+                  
+                  <select name="id_buku">
+                  @foreach ($buku as $data2)
+                    <option value="{{$data2 ->id_buku}}">{{$data2 ->judul}}</option>
+                  @endforeach 
+                  </select>
               </div>
+  
               <div class="form-group">
-                  <label>No Hp</label>
-                  <input type="text" class="form-control" name="telepon" placeholder="telepon" value="{{$distributor -> telepon}}">
+                  <label>jumlah</label>
+                  <input type="text" class="form-control" name="jumlah" placeholder="jumlah">
+              </div>
+
+              <div class="form-group">
+                  <label>tanggal</label>
+                  <input type="date" class="form-control" name="tanggal" placeholder="tanggal">
               </div>
         <input type="hidden" name="_token" value="{{csrf_token()}}">
-        <input type="hidden" name="_method" value="put">
               <input class="btn btn-success" type="submit" value="Submit">
 
 </form>
