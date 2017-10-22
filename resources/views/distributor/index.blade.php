@@ -64,9 +64,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="/kasir">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>Kasir</p>
                     </a>
                 </li>
                 <li>
