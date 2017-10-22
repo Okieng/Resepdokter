@@ -268,6 +268,7 @@
                   <input type="text" class="form-control" name="penulis" placeholder="penulis" value="{{$kasir -> akses}}">
               </div>
         <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="_method" value="put">
               <input class="btn btn-success" type="submit" value="Submit">
 
 </form>
