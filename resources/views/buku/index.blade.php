@@ -64,9 +64,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="/kasir">
                         <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                        <p>Kasir</p>
                     </a>
                 </li>
                 <li>
@@ -141,12 +141,6 @@
                                 <li><a href="#">Another notification</a></li>
                               </ul>
                         </li>
-                        <li>
-                           <a href="">
-                                <i class="fa fa-search"></i>
-								<p class="hidden-lg hidden-md">Search</p>
-                            </a>
-                        </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -183,7 +177,19 @@
             </div>
         </nav>
 
-
+ <div class="title_right">
+                <div class="col-md-5 form-group  top_search">
+                  <div class="input-group">
+                  <form action="/buku/search" method="GET">
+                    <input type="text" name="search" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </form>
+                  </div>
+                </div>
+              </div>
+            
         <div class="content">
             <div class="container-fluid">
                 <div class="row">

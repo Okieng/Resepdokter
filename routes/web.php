@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::GET('buku/search','BukuController@search');
 Route::resource('buku','BukuController');
 Route::resource('distributor','DistributorController');
 Route::resource('kasir','KasirController');
@@ -20,3 +21,7 @@ Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

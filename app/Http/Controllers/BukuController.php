@@ -87,6 +87,13 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function search(Request $request){
+        $cari = $request->get('search');
+        $buku = Buku::where('judul','LIKE','%'.$cari.'%')->paginate(10);
+        return view('buku.index',compact('buku'));
+    }
+
     public function update(Request $request, $id)
     {
         
