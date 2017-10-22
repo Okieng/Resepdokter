@@ -1,5 +1,5 @@
 <div class="container">
-<form action="/buku" method="POST ">
+
 @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -8,8 +8,9 @@
             @endforeach
         </ul>
     </div>
-@endif
-            
+@endif  
+
+<form action="/buku/{{$buku->id_buku}}" method="POST">
               <div class="form-group">
                   <label>judul</label>
                   <input type="text" class="form-control" name="judul" placeholder="judul" value="{{$buku -> judul}}">
@@ -50,8 +51,8 @@
                   <label>diskon</label>
                   <input type="text" class="form-control" name="diskon" placeholder="diskon" value="{{$buku -> diskon}}">
               </div>
-              <input type="hidden" name="_token" value="{{csrf_token()}}">
-              <input type="hidden" name="_method" value="put">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="_method" value="put">
               <input class="btn btn-success" type="submit" value="Submit">
 
 </form>
