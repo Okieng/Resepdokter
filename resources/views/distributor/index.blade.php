@@ -51,9 +51,9 @@
             </div>
 
             <ul class="nav">
-                <li class="">
+                <li>
                     <a href="/buku">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-notebook"></i>
                         <p>Buku</p>
                     </a>
                 </li>
@@ -65,38 +65,20 @@
                 </li>
                 <li>
                     <a href="/kasir">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-calculator"></i>
                         <p>Kasir</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                    <a href="/pasok">
+                        <i class="pe-7s-box2"></i>
+                        <p>Pasok</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                    <a href="/penjualan">
+                        <i class="pe-7s-cart"></i>
+                        <p>Penjualan</p>
                     </a>
                 </li>
             </ul>
@@ -141,12 +123,6 @@
                                 <li><a href="#">Another notification</a></li>
                               </ul>
                         </li>
-                        <li>
-                           <a href="">
-                                <i class="fa fa-search"></i>
-								<p class="hidden-lg hidden-md">Search</p>
-                            </a>
-                        </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -182,11 +158,21 @@
                 </div>
             </div>
         </nav>
-
-
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
+        <br>
+<div class="title_right">
+                <div class="col-md-5 form-group  top_search">
+                  <div class="input-group">
+                  <form action="/distributor/search" method="GET">
+                    <input type="text" name="search" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </form>
+                  </div>
+                </div>
+              </div>
+              
+            <a href="/distributor/create"><button type="button" class="btn btn-success">Tambah Distributor</button></a>
 			<div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
@@ -209,7 +195,7 @@
                             <td>{{$data -> alamat}}</td>
                             <td>{{$data -> telepon}}</td>
                             <td>
-                 <button type="submit" class="btn btn-default btn-xs btn-danger" value="edit"><i class="fa fa-times"></i><a href="/distributor/{{$data->id_distributor}}/edit">Edit</a></button>
+                 <button type="submit" class="btn btn-default btn-xs btn-info" value="edit"><i class="fa fa-times"></i><a href="/distributor/{{$data->id_distributor}}/edit">Edit</a></button>
                        
                             </td>
 

@@ -34,7 +34,7 @@
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image=" /img/sidebar-5.jpg">
+    <div class="sidebar" data-color="purple" data-image=" /img/book.jpg">
 
     <!--
 
@@ -46,14 +46,14 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Toko Buku
                 </a>
             </div>
 
             <ul class="nav">
                 <li class="active">
                     <a href="/buku">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-notebook"></i>
                         <p>Buku</p>
                     </a>
                 </li>
@@ -65,38 +65,20 @@
                 </li>
                 <li>
                     <a href="/kasir">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-calculator"></i>
                         <p>Kasir</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                    <a href="/pasok">
+                        <i class="pe-7s-box2"></i>
+                        <p>Pasok</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                    <a href="/penjualan">
+                        <i class="pe-7s-cart"></i>
+                        <p>Penjualan</p>
                     </a>
                 </li>
             </ul>
@@ -113,7 +95,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="#">Buku</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
@@ -167,16 +149,22 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                <p>Log out</p>
-                            </a>
+                           <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                
                         </li>
 						<li class="separator hidden-lg hidden-md"></li>
                     </ul>
                 </div>
             </div>
         </nav>
-
+<br>
  <div class="title_right">
                 <div class="col-md-5 form-group  top_search">
                   <div class="input-group">
@@ -189,7 +177,8 @@
                   </div>
                 </div>
               </div>
-            
+              
+            <a href="/buku/create"><button type="button" class="btn btn-success">Tambah Buku</button></a>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -208,7 +197,7 @@
                             <th class="column-title">Harga Jual</th>
                             <th class="column-title">Diskon</th>
                             <th class="column-title">PPN</th>
-                            <th class="column-title no-link last" colspan="2"><span class="nobr">Action</span>
+                            <th class="column-title no-link last" colspan="2">Action
                             </th>
                           </tr>
                         </thead>
@@ -229,7 +218,7 @@
                             <td>{{$data -> ppn}}</td>
                             <td>{{$data -> diskon}}</td>
                             <td>
-                 <button type="submit" class="btn btn-default btn-xs btn-danger" value="edit"><i class="fa fa-times"></i><a href="/buku/{{$data->id_buku}}/edit">Edit</a></button>
+                 <button type="submit" class="btn btn-default btn-xs btn-info" value="edit"><i class="fa fa-pencil"></i><a href="/buku/{{$data->id_buku}}/edit">Edit</a></button>
                        
                             </td>
 
@@ -253,33 +242,8 @@
 
         <footer class="footer">
             <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                </p>
+                
+               
             </div>
         </footer>
 
@@ -318,11 +282,11 @@
 
         	$.notify({
             	icon: 'pe-7s-gift',
-            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+            	message: "Selamat datang di Aplikasi Toko Buku."
 
             },{
                 type: 'info',
-                timer: 4000
+                timer: 5
             });
 
     	});

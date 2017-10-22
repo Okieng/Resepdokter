@@ -115,6 +115,12 @@ class PasokController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function search(Request $request){
+        $cari = $request->get('search');
+        $pasok = Pasok::where('tanggal','LIKE','%'.$cari.'%')->paginate(10);
+        return view('pasok.index',compact('pasok'));
+    }
     public function destroy($id)
 	{
 	    $delete = Pasok::find($id);

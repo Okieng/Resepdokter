@@ -56,6 +56,13 @@ class DistributorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+       public function search(Request $request){
+        $cari = $request->get('search');
+        $distributor = Distributor::where('nama_distributor','LIKE','%'.$cari.'%')->paginate(10);
+        return view('distributor.index',compact('distributor'));
+    }
+
     public function edit($id)
     {
         $distributor = Distributor::find($id);

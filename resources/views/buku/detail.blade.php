@@ -1,4 +1,4 @@
- 							 <td>{{$buku -> id_buku}}</td><br>
+                            <td>{{$buku -> id_buku}}</td><br>
                             <td>{{$buku -> judul}}</td><br>
                             <td>{{$buku -> noisbn}}</td><br>
                             <td>{{$buku -> penulis}}</td><br>

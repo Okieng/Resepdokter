@@ -51,52 +51,34 @@
             </div>
 
             <ul class="nav">
-                <li class="">
+                <li>
                     <a href="/buku">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-notebook"></i>
                         <p>Buku</p>
                     </a>
                 </li>
-                <li class="active">
-                    <a href="/pasok">
+                <li>
+                    <a href="/distributor">
                         <i class="pe-7s-user"></i>
                         <p>Distributor</p>
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                    <a href="/kasir">
+                        <i class="pe-7s-calculator"></i>
+                        <p>Kasir</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="/pasok">
+                        <i class="pe-7s-box2"></i>
+                        <p>Pasok</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-				<li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                    <a href="/penjualan">
+                        <i class="pe-7s-cart"></i>
+                        <p>Penjualan</p>
                     </a>
                 </li>
             </ul>
@@ -182,7 +164,21 @@
                 </div>
             </div>
         </nav>
-
+<br>
+<div class="title_right">
+                <div class="col-md-5 form-group  top_search">
+                  <div class="input-group">
+                  <form action="/pasok/search" method="GET">
+                    <input type="text" name="search" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </form>
+                  </div>
+                </div>
+              </div>
+              
+            <a href="/pasok/create"><button type="button" class="btn btn-success">Tambah Pasok</button></a>
 
         <div class="content">
             <div class="container-fluid">
@@ -211,7 +207,7 @@
                             <td>{{$data -> jumlah}}</td>
                             <td>{{$data -> tanggal}}</td>
                             <td>
-                 <button type="submit" class="btn btn-default btn-xs btn-danger" value="edit"><i class="fa fa-times"></i><a href="/pasok/{{$data->id_pasok}}/edit">Edit</a></button>
+                 <button type="submit" class="btn btn-default btn-xs btn-info" value="edit"><i class="fa fa-pencil"></i><a href="/pasok/{{$data->id_pasok}}/edit">Edit</a></button>
                        
                             </td>
 

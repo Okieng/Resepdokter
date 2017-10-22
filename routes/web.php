@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::GET('penjualan/search','PenjualanController@search');
+Route::GET('pasok/search','PasokController@search');
+Route::GET('kasir/search','KasirController@search');
 Route::GET('buku/search','BukuController@search');
+Route::GET('distributor/search','DistributorController@search');
 Route::resource('buku','BukuController');
 Route::resource('distributor','DistributorController');
 Route::resource('kasir','KasirController');
