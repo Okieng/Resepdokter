@@ -36,6 +36,12 @@ class PenjualanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function search(Request $request){
+        $cari = $request->get('search');
+        $penjualan = Penjualan::where('jumlah','LIKE','%'.$cari.'%')->paginate(10);
+        return view('penjualan.index',compact('penjualan'));
+    }
     public function store(Request $request)
     {
         $this->validate($request, [

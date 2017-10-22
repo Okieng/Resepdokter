@@ -164,6 +164,21 @@
                 </div>
             </div>
         </nav>
+<br>
+<div class="title_right">
+                <div class="col-md-5 form-group  top_search">
+                  <div class="input-group">
+                  <form action="/penjualan/search" method="GET">
+                    <input type="text" name="search" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                  </form>
+                  </div>
+                </div>
+              </div>
+              
+            <a href="/penjualan/create"><button type="button" class="btn btn-success">Tambah Penjualan</button></a>
 
 
         <div class="content">
