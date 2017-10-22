@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href=" /img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>Aplikasi Toko Buku</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -51,16 +51,16 @@
             </div>
 
             <ul class="nav">
-                <li class="active">
-                    <a href="dashboard.html">
+                <li class="">
+                    <a href="/buku">
                         <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
+                        <p>Buku</p>
                     </a>
                 </li>
-                <li>
-                    <a href="user.html">
+                <li class="active">
+                    <a href="/distributor">
                         <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                        <p>Distributor</p>
                     </a>
                 </li>
                 <li>
@@ -209,7 +209,7 @@
                             <td>{{$data -> alamat}}</td>
                             <td>{{$data -> telepon}}</td>
                             <td>
-                 <button type="submit" class="btn btn-default btn-xs btn-danger" value="edit"><i class="fa fa-times"></i><a href="/distributor/{{$data->id_distrbituro}}/edit">Edit</a></button>
+                 <button type="submit" class="btn btn-default btn-xs btn-danger" value="edit"><i class="fa fa-times"></i><a href="/distributor/{{$data->id_distributor}}/edit">Edit</a></button>
                        
                             </td>
 
@@ -229,33 +229,12 @@
                       <center>{!! $distributor->links() !!}</center>
                     </div>
         </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
                 </nav>
                 <p class="copyright pull-right">
                     &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
