@@ -51,52 +51,34 @@
             </div>
 
             <ul class="nav">
-                <li class="">
+                <li>
                     <a href="/buku">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-notebook"></i>
                         <p>Buku</p>
                     </a>
                 </li>
-                <li class="">
+                <li>
                     <a href="/distributor">
                         <i class="pe-7s-user"></i>
                         <p>Distributor</p>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="table.html">
-                        <i class="pe-7s-note2"></i>
+                    <a href="/kasir">
+                        <i class="pe-7s-calculator"></i>
                         <p>Kasir</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                    <a href="/pasok">
+                        <i class="pe-7s-box2"></i>
+                        <p>Pasok</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-        <li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                    <a href="/penjualan">
+                        <i class="pe-7s-cart"></i>
+                        <p>Penjualan</p>
                     </a>
                 </li>
             </ul>
@@ -118,20 +100,12 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
-                <p class="hidden-lg hidden-md">Dashboard</p>
+                            
                             </a>
                         </li>
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-globe"></i>
-                                    <b class="caret hidden-sm hidden-xs"></b>
-                                    <span class="notification hidden-sm hidden-xs">5</span>
-                  <p class="hidden-lg hidden-md">
-                    5 Notifications
-                    <b class="caret"></b>
-                  </p>
+                                    
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a href="#">Notification 1</a></li>
@@ -151,15 +125,10 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="">
-                               <p>Account</p>
-                            </a>
+                           
                         </li>
                         <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <p>
-                    Dropdown
-                    <b class="caret"></b>
+                              
                   </p>
                               </a>
                               <ul class="dropdown-menu">
@@ -173,9 +142,14 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                <p>Log out</p>
-                            </a>
+                            <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                         </li>
             <li class="separator hidden-lg hidden-md"></li>
                     </ul>
@@ -190,11 +164,11 @@
       
 
 <div class="container">
-<<<<<<< HEAD
-<form action="/kasir/{{$kasir->id_kasir}}" method="POST">
-=======
 
->>>>>>> 43edcc9d34001c689bf5e3fd48102342428f823c
+<form action="/kasir/{{$kasir->id_kasir}}" method="POST">
+
+
+
 @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -205,38 +179,8 @@
     </div>
 <<<<<<< HEAD
 @endif
-            
-              <div class="form-group">
-                  <label>nama</label>
-                  <input type="text" class="form-control" name="nama" placeholder="nama" value="{{$kasir -> nama}}">
-              </div>
-              <div class="form-group">
-                  <label>alamat</label>
-                  <input type="text" class="form-control" name="alamat" placeholder="alamat" value="{{$kasir -> alamat}}">
-              </div>
-              <div class="form-group">
-                  <label>telepon</label>
-                  <input type="text" class="form-control" name="telepon" placeholder="telepon" value="{{$kasir -> telepon}}">
-              </div>
-              <div class="form-group">
-                  <label>status</label>
-                  <input type="text" class="form-control" name="status" placeholder="status" value="{{$kasir -> status}}">
-              </div>
-              <div class="form-group">
-                  <label>username</label>
-                  <input type="text" class="form-control" name="username" placeholder="username" value="{{$kasir -> username}}">
-              </div>
-              <div class="form-group">
-                  <input type="hidden" class="form-control" name="password" placeholder="password" value="{{$kasir -> password}}">
-              </div>
-              <div class="form-group">
-                  <label>akses</label>
-                  <input type="text" class="form-control" name="akses" placeholder="akses" value="{{$kasir -> akses}}">
-              </div>
-             <input type="hidden" name="_token" value="{{csrf_token()}}">
-             <input type="hidden" name="_method" value="put">
-=======
-@endif  
+
+
 
 <form action="/kasir/{{$kasir->id_kasir}}" method="POST">
               <div class="form-group">
@@ -278,33 +222,7 @@
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                </p>
-            </div>
+                    
         </footer>
 
     </div>

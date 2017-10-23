@@ -53,7 +53,7 @@
             <ul class="nav">
                 <li class="active">
                     <a href="/buku">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-notebook"></i>
                         <p>Buku</p>
                     </a>
                 </li>
@@ -65,32 +65,20 @@
                 </li>
                 <li>
                     <a href="/kasir">
-                        <i class="pe-7s-note2"></i>
+                        <i class="pe-7s-calculator"></i>
                         <p>Kasir</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                    <a href="/pasok">
+                        <i class="pe-7s-box2"></i>
+                        <p>Pasok</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
+                    <a href="/penjualan">
+                        <i class="pe-7s-cart"></i>
+                        <p>Penjualan</p>
                     </a>
                 </li>
             </ul>
@@ -113,16 +101,13 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
+                                
                 <p class="hidden-lg hidden-md">Dashboard</p>
                             </a>
                         </li>
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-globe"></i>
-                                    <b class="caret hidden-sm hidden-xs"></b>
-                                    <span class="notification hidden-sm hidden-xs">5</span>
-                  <p class="hidden-lg hidden-md">
+                              <p class="hidden-lg hidden-md">
                     5 Notifications
                     <b class="caret"></b>
                   </p>
@@ -139,16 +124,10 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="">
-                               <p>Account</p>
-                            </a>
+                           
                         </li>
                         <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <p>
-                    Dropdown
-                    <b class="caret"></b>
-                  </p>
+                              
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
@@ -245,33 +224,7 @@
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                </p>
-            </div>
+                   
         </footer>
 
     </div>
@@ -313,7 +266,7 @@
 
             },{
                 type: 'info',
-                timer: 4000
+                timer: 1
             });
 
       });

@@ -38,7 +38,7 @@ class KasirController extends Controller
      */
     public function search(Request $request){
         $cari = $request->get('search');
-        $kasir = Kasir::where('nama','LIKE','%'.$cari.'%')->paginate(10);
+        $kasir = Kasir::where('status','LIKE','%'.$cari.'%')->paginate(10);
         return view('kasir.index',compact('kasir'));
     }
 

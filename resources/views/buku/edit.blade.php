@@ -34,7 +34,7 @@
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image=" /img/sidebar-5.jpg">
+    <div class="sidebar" data-color="purple" data-image=" /img/book.jpg">
 
     <!--
 
@@ -53,7 +53,7 @@
             <ul class="nav">
                 <li class="active">
                     <a href="/buku">
-                        <i class="pe-7s-graph"></i>
+                        <i class="pe-7s-notebook"></i>
                         <p>Buku</p>
                     </a>
                 </li>
@@ -64,39 +64,21 @@
                     </a>
                 </li>
                 <li>
-                    <a href="table.html">
-                        <i class="pe-7s-note2"></i>
-                        <p>Table List</p>
+                    <a href="/kasir">
+                        <i class="pe-7s-calculator"></i>
+                        <p>Kasir</p>
                     </a>
                 </li>
                 <li>
-                    <a href="typography.html">
-                        <i class="pe-7s-news-paper"></i>
-                        <p>Typography</p>
+                    <a href="/pasok">
+                        <i class="pe-7s-box2"></i>
+                        <p>Pasok</p>
                     </a>
                 </li>
                 <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="maps.html">
-                        <i class="pe-7s-map-marker"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-        <li class="active-pro">
-                    <a href="upgrade.html">
-                        <i class="pe-7s-rocket"></i>
-                        <p>Upgrade to PRO</p>
+                    <a href="/penjualan">
+                        <i class="pe-7s-cart"></i>
+                        <p>Penjualan</p>
                     </a>
                 </li>
             </ul>
@@ -119,15 +101,15 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-dashboard"></i>
+                                
                 <p class="hidden-lg hidden-md">Dashboard</p>
                             </a>
                         </li>
                         <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-globe"></i>
-                                    <b class="caret hidden-sm hidden-xs"></b>
-                                    <span class="notification hidden-sm hidden-xs">5</span>
+                                   
+                                   
+                                    
                   <p class="hidden-lg hidden-md">
                     5 Notifications
                     <b class="caret"></b>
@@ -143,7 +125,7 @@
                         </li>
                         <li>
                            <a href="">
-                                <i class="fa fa-search"></i>
+                               
                 <p class="hidden-lg hidden-md">Search</p>
                             </a>
                         </li>
@@ -151,16 +133,9 @@
 
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                           <a href="">
-                               <p>Account</p>
-                            </a>
+                           
                         </li>
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <p>
-                    Dropdown
-                    <b class="caret"></b>
-                  </p>
+
                               </a>
                               <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
@@ -173,10 +148,17 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                <p>Log out</p>
-                            </a>
+                            <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                        
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                                
                         </li>
+                        
             <li class="separator hidden-lg hidden-md"></li>
                     </ul>
                 </div>
@@ -253,33 +235,7 @@
         <footer class="footer">
             <div class="container-fluid">
                 <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                </p>
-            </div>
+                    
         </footer>
 
     </div>
@@ -317,11 +273,11 @@
 
           $.notify({
               icon: 'pe-7s-gift',
-              message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+              message: "Selamat datang di Aplikasi Toko Buku."
 
             },{
                 type: 'info',
-                timer: 4000
+                timer: 5
             });
 
       });
